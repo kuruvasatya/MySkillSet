@@ -4,5 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="bus" class="Bus"></bean>
-    <bean id="train" class="Train"></bean>
+    <bean id="train" class="Train" lazy-init="true"></bean>
+
+<!--    to lazy load a bean-->
+<!--    <bean id="bus" class="Bus" lazy-init="true"></bean>-->
+<!--    <bean id="train" class="Train" lazy-init="true"></bean>-->
 </beans>
