@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address1" class="com.learning.collection.Address">
+        <constructor-arg name="city" value="Bangalore"></constructor-arg>
+        <constructor-arg name="pincode" value="560048"></constructor-arg>
+    </bean>
+
+    <bean id="address2" class="com.learning.collection.Address">
+        <constructor-arg name="city" value="Chennai"></constructor-arg>
+        <constructor-arg name="pincode" value="560048"></constructor-arg>
+    </bean>
+
+    <bean id="address3" class="com.learning.collection.Address">
+        <constructor-arg name="city" value="Chennai"></constructor-arg>
+        <constructor-arg name="pincode" value="560048"></constructor-arg>
+    </bean>
+
+    <bean id="studentList" class="com.learning.collection.Student">
+        <constructor-arg name="name" value="satya"></constructor-arg>
+        <constructor-arg name="address">
+            <list>
+
+                <ref bean="address1"></ref>
+                <ref bean="address2"></ref>
+                <ref bean="address3"></ref>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="studentSet" class="com.learning.collection.Student">
+        <constructor-arg name="name" value="satya"></constructor-arg>
+        <constructor-arg name="address">
+            <set>
+                <!--  all the three objects will be printed-->
+                <ref bean="address1"></ref>
+                <ref bean="address2"></ref>
+                <ref bean="address3"></ref>
+            </set>
+        </constructor-arg>
+    </bean>
+</beans>
