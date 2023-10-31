@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    name of the reference variable and name of the bean should be same for autowire byName-->
+    <bean id="addres" class="com.learning.autowire.Address" lazy-init="true">
+        <constructor-arg name="city" value="Bangalore"></constructor-arg>
+        <constructor-arg name="pincode" value="560048"></constructor-arg>
+    </bean>
+
+    <bean id="address" class="com.learning.autowire.Address" lazy-init="true">
+        <constructor-arg name="city" value="Bangalore"></constructor-arg>
+        <constructor-arg name="pincode" value="560048"></constructor-arg>
+    </bean>
+
+    <bean id="student" class="com.learning.autowire.Student" autowire="byName" lazy-init="true">
+        <property name="name" value="satya"></property>
+    </bean>
+
+    <bean id="student1" class="com.learning.autowire.Student" autowire="byType" lazy-init="true">
+        <property name="name" value="satya"></property>
+    </bean>
+</beans>

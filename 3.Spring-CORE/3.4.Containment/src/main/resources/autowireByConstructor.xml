@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    autowire by constructor-->
+    <!--    1. check byType, if there are multiple beans of same type-->
+    <!--    2. then it checks by name, and if name doesnt match it throws exception-->
+
+    <bean id="addres" class="com.learning.autowireByConstructor.Address" lazy-init="true">
+        <constructor-arg name="city" value="Hyderaba"></constructor-arg>
+        <constructor-arg name="pincode" value="58123"></constructor-arg>
+    </bean>
+
+    <bean id="addressdas" class="com.learning.autowireByConstructor.Address" lazy-init="true">
+        <constructor-arg name="city" value="Bangalore"></constructor-arg>
+        <constructor-arg name="pincode" value="560048"></constructor-arg>
+    </bean>
+
+    <bean id="address" class="com.learning.autowireByConstructor.Address" lazy-init="true">
+        <constructor-arg name="city" value="Chennai"></constructor-arg>
+        <constructor-arg name="pincode" value="560048"></constructor-arg>
+    </bean>
+
+    <bean id="student" class="com.learning.autowireByConstructor.Student" autowire="constructor" lazy-init="true">
+        <constructor-arg name="name" value="satya"></constructor-arg>
+    </bean>
+</beans>
