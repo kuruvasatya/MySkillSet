@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="laptop" class="shoppingcart.Product">
+        <constructor-arg name="name" value="Laptop"></constructor-arg>
+        <constructor-arg name="price" value="89000"></constructor-arg>
+    </bean>
+
+    <bean name="iphone" class="shoppingcart.Product">
+        <constructor-arg name="name" value="iphone"></constructor-arg>
+        <constructor-arg name="price" value="45200"></constructor-arg>
+    </bean>
+
+    <bean name="bicycle" class="shoppingcart.Product">
+        <constructor-arg name="name" value="bicyle"></constructor-arg>
+        <constructor-arg name="price" value="12000"></constructor-arg>
+    </bean>
+
+    <bean id="cart" class="shoppingcart.Cart"></bean>
+<!--    <bean id="cart" class="shoppingcart.Cart" scope="prototype"></bean>-->
+</beans>

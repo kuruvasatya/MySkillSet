@@ -3,6 +3,8 @@ package singleton;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Arrays;
+
 public class TestClass {
     public static void main(String args[]) throws InterruptedException {
         ApplicationContext context = new ClassPathXmlApplicationContext("singleton.xml");
