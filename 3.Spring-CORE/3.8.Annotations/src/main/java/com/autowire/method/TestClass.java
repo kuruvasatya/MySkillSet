@@ -1,11 +1,11 @@
-package com.autowire;
+package com.autowire.method;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestClass {
     public static void main(String args[]) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans1.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("byMethod.xml");
 
         /**
          * @Autowire

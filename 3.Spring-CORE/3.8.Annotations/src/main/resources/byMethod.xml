@@ -9,20 +9,20 @@
 >
     <context:annotation-config></context:annotation-config>
 
-    <bean id="humanHeart" class="com.autowire.Heart">
+    <bean id="humanHeart" class="com.autowire.method.Heart">
         <constructor-arg value="1"></constructor-arg>
         <constructor-arg value="red"></constructor-arg>
     </bean>
 
-    <bean id="octopusHeart" class="com.autowire.Heart">
+    <bean id="octopusHeart" class="com.autowire.method.Heart">
         <constructor-arg value="5"></constructor-arg>
         <constructor-arg value="blue"></constructor-arg>
     </bean>
 
-<!--    <bean id="heart" class="com.autowire.Heart">-->
-<!--        <constructor-arg value="6"></constructor-arg>-->
-<!--        <constructor-arg value="yellow"></constructor-arg>-->
-<!--    </bean>-->
+    <bean id="heart" class="com.autowire.method.Heart">
+        <constructor-arg value="6"></constructor-arg>
+        <constructor-arg value="yellow"></constructor-arg>
+    </bean>
 
-    <bean id="human" class="com.autowire.Human"></bean>
+    <bean id="human" class="com.autowire.method.Human"></bean>
 </beans>

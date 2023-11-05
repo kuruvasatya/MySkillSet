@@ -1,4 +1,4 @@
-package com.autowire;
+package com.autowire.byConstructor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
