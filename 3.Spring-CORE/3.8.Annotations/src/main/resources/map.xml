@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd"
+>
+    <context:annotation-config></context:annotation-config>
+
+    <bean id="book1" class="com.autowire.collection.map.Book">
+        <constructor-arg value="Spring"></constructor-arg>
+        <constructor-arg value="250"></constructor-arg>
+    </bean>
+
+    <bean id="book2" class="com.autowire.collection.map.Book">
+        <constructor-arg value="Spring Boot"></constructor-arg>
+        <constructor-arg value="550"></constructor-arg>
+    </bean>
+
+    <bean id="book3" class="com.autowire.collection.map.Book">
+        <constructor-arg value="Hibernate"></constructor-arg>
+        <constructor-arg value="150"></constructor-arg>
+    </bean>
+
+    <bean id="cart" class="com.autowire.collection.map.Cart"></bean>
+</beans>
