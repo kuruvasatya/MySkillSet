@@ -4,8 +4,8 @@ public class JDBCDemo {
     public static void main(String args[]) {
         Connection con = null;
         try {
-            // 2. load and register driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            // 2. load and register driver (it has become optional step after java 1.7)
+            //Class.forName("com.mysql.cj.jdbc.Driver");
 
             // 3. create connection
             String url = "jdbc:mysql://localhost:3307/myskillset_jdbc";
@@ -32,7 +32,7 @@ public class JDBCDemo {
                 System.out.println(rs2.getInt(1) + " " + rs2.getString(2));
             }
         } catch (Exception e) {
-            System.out.println("Error occured : " + e);
+            System.out.println("Error occurred : " + e);
         } finally {
             try {
                 con.close();
