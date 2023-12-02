@@ -1,22 +1,19 @@
-package onetomany;
+package manytoone2;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
-
-        Laptop laptop = new Laptop();
-        laptop.setBrand("Lenovo");
-        Laptop laptop1 = new Laptop();
-        laptop1.setBrand("DELL");
+        Laptop lap1 = new Laptop();
+        lap1.setBrand("lenovo");
+        Laptop lap2 = new Laptop();
+        lap2.setBrand("dell");
         Student student = new Student();
         student.setName("satya");
-        student.setLaptops( new ArrayList<>(Arrays.asList(new Laptop[] {laptop,laptop1})));
+        lap1.setStudent(student);
+        lap2.setStudent(student);
 
         SessionFactory sessionFactory = new Configuration()
                 .configure()
@@ -25,14 +22,14 @@ public class Main {
                 .buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.save(laptop);
-        session.save(laptop1);
         session.save(student);
+        session.save(lap1);
+        session.save(lap2);
         session.getTransaction().commit();
         session.close();
 
         session = sessionFactory.openSession();
-        Student s = session.get(Student.class,  1);
+        Student s = session.get(Student.class, 1);
         System.out.println(s);
         session.close();
     }

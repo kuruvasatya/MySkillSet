@@ -1,16 +1,13 @@
-package onetomany;
+package manytoone;
 
 import javax.persistence.*;
-import java.util.*;
 
-@Entity
+@Entity(name = "STUDENT_1")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    @OneToMany(fetch = FetchType.EAGER)
-    private List<Laptop> laptops;
 
     public int getId() {
         return id;
@@ -28,20 +25,11 @@ public class Student {
         this.name = name;
     }
 
-    public List<Laptop> getLaptops() {
-        return laptops;
-    }
-
-    public void setLaptops(List<Laptop> laptops) {
-        this.laptops = laptops;
-    }
-
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", laptops=" + laptops +
                 '}';
     }
 }

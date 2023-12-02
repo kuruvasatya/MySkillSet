@@ -1,11 +1,8 @@
-package onetomany;
+package manytoone;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +13,8 @@ public class Main {
         laptop1.setBrand("DELL");
         Student student = new Student();
         student.setName("satya");
-        student.setLaptops( new ArrayList<>(Arrays.asList(new Laptop[] {laptop,laptop1})));
+        laptop.setStudent(student);
+        laptop1.setStudent(student);
 
         SessionFactory sessionFactory = new Configuration()
                 .configure()
@@ -32,8 +30,7 @@ public class Main {
         session.close();
 
         session = sessionFactory.openSession();
-        Student s = session.get(Student.class,  1);
-        System.out.println(s);
+        System.out.println(session.get(Laptop.class, 1));
         session.close();
     }
 }

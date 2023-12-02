@@ -1,16 +1,16 @@
-package onetomany;
+package manytoone2;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.Set;
 
-@Entity
+@Entity(name = "Student_2")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    @OneToMany(fetch = FetchType.EAGER)
-    private List<Laptop> laptops;
+    @OneToMany(mappedBy = "student")
+    private Set<Laptop> laptop;
 
     public int getId() {
         return id;
@@ -28,12 +28,12 @@ public class Student {
         this.name = name;
     }
 
-    public List<Laptop> getLaptops() {
-        return laptops;
+    public Set<Laptop> getLaptop() {
+        return laptop;
     }
 
-    public void setLaptops(List<Laptop> laptops) {
-        this.laptops = laptops;
+    public void setLaptop(Set<Laptop> laptop) {
+        this.laptop = laptop;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class Student {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", laptops=" + laptops +
+                ", laptop=" + laptop +
                 '}';
     }
 }
