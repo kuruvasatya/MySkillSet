@@ -74,8 +74,10 @@ public class Main {
         session.beginTransaction();
 
         //use fetch join to get data of related entites
-        TypedQuery<Customer> query = session.createQuery("from Customer c JOIN FETCH c.address" +
-                " JOIN FETCH c.bookList b JOIN FETCH b.author c JOIN FETCH c.address");
+        // JOIN FETCH => inner join
+        // LEFT JOIN FETCH => Left join
+        TypedQuery<Customer> query = session.createQuery("from Customer c LEFT JOIN FETCH c.address" +
+                " LEFT JOIN FETCH c.bookList b LEFT JOIN FETCH b.author c JOIN FETCH c.address");
 
 
         System.out.println("1.......................");
