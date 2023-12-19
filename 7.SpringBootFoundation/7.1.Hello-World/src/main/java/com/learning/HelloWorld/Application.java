@@ -1,16 +1,21 @@
 package com.learning.HelloWorld;
 
 
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
+import java.util.Arrays;
+
 @SpringBootApplication
-@SpringBootConfiguration
-@EnableAutoConfiguration
-@ComponentScan
+//@SpringBootConfiguration
+//@EnableAutoConfiguration
+//@ComponentScan
 public class Application {
 	public static void main(String[] args) {
 		/**
@@ -47,6 +52,20 @@ public class Application {
 		 */
 		SpringApplication.run(Application.class, args);
 
+	}
+
+	@Bean
+	CommandLineRunner commandLineRunner() {
+		return args -> {
+			System.out.println("I am callback method called after context initialization " + Arrays.toString(args));
+		};
+	}
+
+	@Bean
+	ApplicationRunner applicationRunner() {
+		return (args) -> {
+			System.out.println("I am another callback method called after context initialization " + Arrays.toString(args.getSourceArgs()));
+		};
 	}
 
 }
