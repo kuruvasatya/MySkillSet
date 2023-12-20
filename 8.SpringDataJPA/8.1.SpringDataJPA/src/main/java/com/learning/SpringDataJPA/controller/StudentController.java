@@ -2,7 +2,6 @@ package com.learning.SpringDataJPA.controller;
 
 import com.learning.SpringDataJPA.dao.StudentRepository;
 import com.learning.SpringDataJPA.entity.Student;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -84,5 +83,10 @@ public class StudentController {
     public String deleteStudent(@PathVariable int id) {
         studentRepository.deleteById(id);
         return "student deleted";
+    }
+
+    @GetMapping("studentByName/{name}")
+    public Student getStudentByName(@PathVariable String name) {
+        return studentRepository.findByName(name).orElse(null);
     }
 }
