@@ -23,7 +23,7 @@ public class ProductService {
 
     @PostConstruct
     public void init(){
-        List<Product> products = IntStream.rangeClosed(1, 500)
+        List<Product> products = IntStream.rangeClosed(1, 10)
                 .mapToObj(i -> new Product("product" +i, new Random().nextInt(100), new Random().nextDouble(100)))
                 .collect(Collectors.toList());
         this.productRepository.saveAll(products);
