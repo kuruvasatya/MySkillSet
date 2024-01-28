@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
 
     @GetMapping("/hello")
-    public String printHelloWorld() {
-        return "Hello World";
+    public String printHelloWorld() throws InterruptedException {
+        Thread.sleep(50000);
+        return Thread.currentThread().getName();
     }
 }
