@@ -29,5 +29,22 @@ public class Main1 {
 
         Stream.iterate(10,(Integer n) -> n+1).limit(10).forEach(System.out::println);
 
+
+        // example of mapToInt()
+        String[] numbers = new String[] { "1", "2", "3"};
+        int[] nums = Arrays.stream(numbers)
+                .mapToInt(n -> Integer.parseInt(n))
+                .toArray();
+
+        Integer[] nums2 = Arrays.stream(numbers)
+                .map(n -> Integer.parseInt(n))
+                .toArray(Integer[]::new);
+
+        List<Integer> nums3 = Arrays.stream(nums)
+                .filter(num -> num%2 ==0 )
+                .boxed()
+                .collect(Collectors.toList());
+
+
     }
 }

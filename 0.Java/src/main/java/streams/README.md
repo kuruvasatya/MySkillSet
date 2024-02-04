@@ -1,5 +1,22 @@
 https://notebook.zohopublic.in/public/notes/74tdod05928d081b5484fbfd5937d4129fa64
 
+# Summary
+## Intermediate operations
+
+- **filter(Predicate)**: Filters elements of the stream based on a predicate.
+- **map(Function)**: Transforms each element of the stream using the provided function.
+- **mapToInt(ToIntFunction)**: Transforms each element of the stream into an int using the provided function.
+- **flatMap(Function)**: Similar to map, but it can flatten nested streams into a single stream.
+- **distinct()**: Removes duplicate elements from the stream.
+- **sorted()**: Sorts the elements of the stream in natural order.
+- **sorted(Comparator)**: Sorts the elements of the stream using the specified comparator.
+- **peek(Consumer)**: Allows you to perform an action for each element of the stream without modifying the elements.
+- **limit(long)**: Limits the size of the stream to the specified number of elements.
+- **skip(long)**: Skips the specified number of elements from the stream.
+- **boxed()**: Converts each element of a stream of primitive types into a corresponding stream of boxed types.
+- **parallel()**: Converts a sequential stream into a parallel stream, enabling parallel processing.
+
+
 ![img.png](notes/img.png)
 ![img_1.png](notes/img_1.png)
 ![img_2.png](notes/img_2.png)
